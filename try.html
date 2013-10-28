@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script>
+function myFunction()
+{
+if(document.getElementById('xyz').value=='')
+{
+    document.getElementById('xyz').value='xyz';
+    document.getElementById("demo").innerHTML="My First JavaScript Function";
+}
+else
+{
+    document.getElementById("demo").innerHTML="My second JavaScript Function";
+}
+
+//document.getElementById("b1").ondblclick="myFunction1()";
+}
+function myFunction1()
+{
+document.getElementById("demo").innerHTML="My second JavaScript Function";
+}
+</script>
+</head>
+
+<body>
+
+<h1>My Web Page</h1>
+
+<p id="demo">A Paragraph</p>
+
+<button type="button" id="b1" onclick="myFunction()" ondblclick="myFunction1()">Try it</button>
+<input id="xyz" type="hidden"/>
+</body>
+</html> 
