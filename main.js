@@ -62,7 +62,70 @@ function reset()
 
 
             
-
+function bigwin()
+    {
+    var a;
+     if(temp%2==0)
+        {a='X';}
+    else
+        {a='O';}
+     
+     
+     var i;
+     var j;
+    
+     
+   
+     
+    var flag=0;	
+        
+    //check for draw
+    for(i=0;i<3;++i)
+        {for(j=0;j<3;++j)
+                    {if(big[i][j]==' ')
+                        {flag=1;
+                        }
+                    }
+        }
+        
+    
+     
+    if(flag==0)
+        {alert("Game is a draw. Unfortunate. :/");
+        }
+    
+     else
+            {flag=0;
+            //rows and columns check
+            for(i=0;i<3;++i)
+                         {//alert(flag);
+                          if (big[i][0]==big[i][1] && big[i][1]==big[i][2] && big[i][2]!=' ')
+                            {flag=1;
+                            }
+                          
+                          if (big[0][i]==big[1][i] && big[1][i]==big[2][i] && big[2][i]!=' ')
+                            {flag=1;
+                            }
+                         }
+             
+             //forward slanting diagonal check
+             if(big[0][0]==big[1][1] && big[1][1]==big[2][2] && big[2][2]!=' ')
+                {flag=1;
+                }
+             //backward slanting diagonal check
+             if(big[0][2]==big[1][1] && big[1][1]==big[2][0] && big[2][0]!=' ')
+                {flag=1;
+                }
+             
+             
+             if(flag==1)
+                { p=" WINS!!!";
+                q=a.concat(p);
+                alert(q);
+                
+                }
+            }
+    }
 
 
 
@@ -94,7 +157,7 @@ function win(x)
     //check for draw
     for(i=0;i<3;++i)
         {for(j=0;j<3;++j)
-                    {if(ttt[t][i][j]!=' ')
+                    {if(ttt[t][i][j]==' ')
                         {flag=1;
                         }
                     }
@@ -103,7 +166,8 @@ function win(x)
     
      
     if(flag==0)
-        {switch(x){
+        {alert("draw!");
+            switch(x){
                     case 0: {big[0][0]=a;
                              break;}
                     case 1: {big[0][1]=a;
@@ -161,10 +225,10 @@ function win(x)
                             case 7: {big[2][1]=a;break;}
                             case 8: {big[2][2]=a;break;}
                          }
-                p="wins in here";
+                p=" wins in here";
                 q=a.concat(p);
                 alert(q);
-     
+                
                 }
             }    
      
@@ -293,13 +357,16 @@ function funky(x) {
                                          break;}
                                 }
                    win(t);
-                   reset(); 
+                   bigwin();
+                    reset();
+                
                     }
          
             else
                 {alert("This position is already SET");
                 }
             temp=temp+1;
+        
             
         }
     }
