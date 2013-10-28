@@ -46,6 +46,7 @@ for(k=0;k<9;++k)
 
 function reset()
     {document.getElementById("thing").value=' ';
+     document.getElementById("where").innerHTML='MAIN TICTACTOE';
      document.getElementById("tt00").innerHTML=big[0][0];
      document.getElementById("tt01").innerHTML=big[0][1];
      document.getElementById("tt02").innerHTML=big[0][2];
@@ -160,13 +161,13 @@ function win(x)
                             case 7: {big[2][1]=a;break;}
                             case 8: {big[2][2]=a;break;}
                          }
+                p="wins in here";
+                q=a.concat(p);
+                alert(q);
      
                 }
             }    
-                
-                       
-		
-    
+     
         
     }
 
@@ -219,7 +220,9 @@ function funky(x) {
                                      break;}
                          }
         if(flag==0)
-            {
+            {d="INNER TICTACTOE";
+             p=d.concat(t);
+             document.getElementById("where").innerHTML=p;
              document.getElementById("tt00").innerHTML=ttt[x][0][0];
              document.getElementById("tt01").innerHTML=ttt[x][0][1];
              document.getElementById("tt02").innerHTML=ttt[x][0][2];
