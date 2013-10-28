@@ -1,71 +1,86 @@
-var ttt[9][3][3];
-var big[3][3];
+var ttt = new Array(3);
+var i;
+var j;
+var temp=0;
 
+for (i = 0; i < 3; ++i)
+    {ttt[i] = new Array(3);
+    }
+
+for (i=0; i <3; i++)
+    {for(j=0;j<3;++j)
+        {ttt[i][j]=new Array(3)
+        }
+    }
+
+
+var big = new Array(3);
+
+for (i = 0; i < 3; ++i)
+    {big[i] = new Array(3);
+    }
+
+
+temp=0;
 for(i=0;i<3;++i)
+    {
     for(j=0;j<3;++j)
-        big[i][j]=' ';
-
-for(k=0;k<9;++k)
-    for(i=0;i<3;++i)
-        for(j=0;j<3;++j)
-            ttt[k][i][j]=' ';
-    
-
-
-function funky(x,y) {
-    var t=document.getElementById("thing").value;
-    
-    if(t=='')
-        {document.getElementById("thing").value=x;
-        }
-    else
         {
-        switch(t)
-            {case 'tt00':
-        
-            }
-        
-    
-            
-        document.getElementById("thing").value='';
-
+            big[i][j]='TEST ';
         }
-}
+    }
+for(k=0;k<9;++k)
+    {for(i=0;i<3;++i)
+        {for(j=0;j<3;++j)
+            {ttt[k][i][j]='test ';
+            }
+        }
+    }
 
 
 
-function win(a)
+
+
+
+
+function reset()
+    {document.getElementById("thing").value=' ';
+     document.getElementById("tt00").innerHTML=big[0][0];
+     document.getElementById("tt01").innerHTML=big[0][1];
+     document.getElementById("tt02").innerHTML=big[0][2];
+     document.getElementById("tt10").innerHTML=big[1][0];
+     document.getElementById("tt11").innerHTML=big[1][1];
+     document.getElementById("tt12").innerHTML=big[1][2];
+     document.getElementById("tt20").innerHTML=big[2][0];
+     document.getElementById("tt21").innerHTML=big[2][1];
+     document.getElementById("tt22").innerHTML=big[2][2];
+    }
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+function win(x)
     {var t=document.getElementById("thing").value;
-     switch(t){
-         case 'tt00': for(i=0;i<3;++i)
+     
+     for(i=0;i<3;++i)
                  for(j=0;j<3;++j)
-                 var arr[i][j]=ttt[0][i][j];
-        case 'tt01': for(i=0;i<3;++i)
-                 for(j=0;j<3;++j)
-                 var arr[i][j]=ttt[1][i][j];
-		case 'tt02': for(i=0;i<3;++i)
-                 for(j=0;j<3;++j)
-                 var arr[i][j]=ttt[2][i][j];
-		case 'tt10': for(i=0;i<3;++i)
-                 for(j=0;j<3;++j)
-                 var arr[i][j]=ttt[3][i][j];
-		case 'tt11': for(i=0;i<3;++i)
-                 for(j=0;j<3;++j)
-                 var arr[i][j]=ttt[4][i][j];
-		case 'tt12': for(i=0;i<3;++i)
-                 for(j=0;j<3;++j)
-                 var arr[i][j]=ttt[5][i][j];
-		case 'tt20': for(i=0;i<3;++i)
-                 for(j=0;j<3;++j)
-                 var arr[i][j]=ttt[6][i][j];
-		case 'tt21': for(i=0;i<3;++i)
-                 for(j=0;j<3;++j)
-                 var arr[i][j]=ttt[7][i][j];
-		case 'tt22': for(i=0;i<3;++i)
-                 for(j=0;j<3;++j)
-                 var arr[i][j]=ttt[8][i][j];
+                     arr[i][j]=ttt[t][i][j];
      }
-             
+     
+
+
+    var a=document.getElementById("switcher").value;
+    
     var flag=0;	
     for(i=0;i<3;++i)
                  {if (arr[i][0]==arr[i][1] && arr[i][1]==arr[i][2])
@@ -82,16 +97,16 @@ function win(a)
      
      if(flag==1)
         {
-            switch(t){
-         case 'tt00': big[0][0]=a;
-        case 'tt01': big[0][1]=a;
-		case 'tt02': big[0][2]=a;
-        case 'tt10': big[1][0]=a;
-		case 'tt11': big[1][1]=a;
-		case 'tt12': big[1][2]=a;
-		case 'tt20': big[2][0]=a;
-		case 'tt21': big[2][1]=a;
-		case 'tt22': big[2][2]=a;
+        switch(x){
+        case 0 : big[0][0]=a;
+        case 1: big[0][1]=a;
+		case 2: big[0][2]=a;
+        case 3: big[1][0]=a;
+		case 4: big[1][1]=a;
+		case 5: big[1][2]=a;
+		case 6: big[2][0]=a;
+		case 7: big[2][1]=a;
+		case 8: big[2][2]=a;
      }
      
      
@@ -100,4 +115,72 @@ function win(a)
     
         
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function funky(x) {
+    var t=document.getElementById("thing").value;
+    var a;
+    if(temp%2==0)
+        {a='X';}
+    else
+        {a='O';}
+    
+    
+    if(t==' ')
+        {document.getElementById("thing").value=x;
+         x=parseInt(x);
+         document.getElementById("tt00").innerHTML=ttt[x][0][0];
+         document.getElementById("tt01").innerHTML=ttt[x][0][1];
+         document.getElementById("tt02").innerHTML=ttt[x][0][2];
+         document.getElementById("tt10").innerHTML=ttt[x][1][0];
+         document.getElementById("tt11").innerHTML=ttt[x][1][1];
+         document.getElementById("tt12").innerHTML=ttt[x][1][2];
+         document.getElementById("tt20").innerHTML=ttt[x][2][0];
+         document.getElementById("tt21").innerHTML=ttt[x][2][1];
+         document.getElementById("tt22").innerHTML=ttt[x][2][2];
+        }
+    else
+        {   temp=temp+1;
+            x=parseInt(x);
+            alert(x);
+            t=parseInt(t);
+            switch(x){
+                        case 0: {ttt[t][0][0]=a;break;}
+                        case 1: {ttt[t][0][1]=a;break;}
+                        case 2: {ttt[t][0][2]=a;break;}
+                        case 3: {ttt[t][1][0]=a;break;}
+                        case 4: {ttt[t][1][1]=a;break;}
+                        case 5: {ttt[t][1][2]=a;break;}
+                        case 6: {ttt[t][2][0]=a;break;}
+                        case 7: {ttt[t][2][1]=a;break;}
+                        case 8: {ttt[t][2][2]=a;break;}
+                        }
+            
+           reset(); 
+        }
+                
+            
+    }
+    
+
+
+
+
+
     
