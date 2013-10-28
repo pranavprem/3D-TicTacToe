@@ -3,11 +3,11 @@ var i;
 var j;
 var temp=0;
 
-for (i = 0; i < 3; ++i)
+for (i = 0; i < 9; ++i)
     {ttt[i] = new Array(3);
     }
 
-for (i=0; i <3; i++)
+for (i=0; i <9; i++)
     {for(j=0;j<3;++j)
         {ttt[i][j]=new Array(3)
         }
@@ -29,6 +29,7 @@ for(i=0;i<3;++i)
             big[i][j]='TEST ';
         }
     }
+
 for(k=0;k<9;++k)
     {for(i=0;i<3;++i)
         {for(j=0;j<3;++j)
@@ -158,7 +159,6 @@ function funky(x) {
     else
         {   temp=temp+1;
             x=parseInt(x);
-            alert(x);
             t=parseInt(t);
             switch(x){
                         case 0: {ttt[t][0][0]=a;break;}
