@@ -9,23 +9,23 @@ p
 table
 	{border-collapse:collapse;
 	 position:relative;
-	 left:38%;
-	 top:30%;
+	 left:37%;
+	 top:29%;
 	 
 	}
 	
 tr
-    {height:80px   
+    {height:90px   
     }
 
 
 td
-    {width:80px;
+    {width:90px;
     border:thin solid black;
 	text-align:center
     }
 
 button
-    {width:80px;
-    height:80px
+    {width:90px;
+    height:90px
     }

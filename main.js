@@ -1,4 +1,4 @@
-var ttt = new Array(3);
+var ttt = new Array(9);
 var i;
 var j;
 var temp=0;
@@ -60,8 +60,38 @@ function reset()
 
 
 
-
+function hide()
+    {var obj=document.getElementById("mt");
+     obj.style.visibility="hidden";
+    }
             
+function show(x)
+        {t=document.getElementById("thing").value;
+         
+         if(t==' ')
+            {var obj=document.getElementById("mt");
+             obj.style.visibility="visible";
+             document.getElementById("t0").innerHTML=ttt[x][0][0];
+             document.getElementById("t1").innerHTML=ttt[x][0][1];
+             document.getElementById("t2").innerHTML=ttt[x][0][2];
+             document.getElementById("t3").innerHTML=ttt[x][1][0];
+             document.getElementById("t4").innerHTML=ttt[x][1][1];
+             document.getElementById("t5").innerHTML=ttt[x][1][2];
+             document.getElementById("t6").innerHTML=ttt[x][2][0];
+             document.getElementById("t7").innerHTML=ttt[x][2][1];
+             document.getElementById("t8").innerHTML=ttt[x][2][2];
+            }
+        }
+
+
+
+
+
+
+
+
+
+
 function bigwin()
     {
     var a;
@@ -300,6 +330,7 @@ function funky(x) {
          else
             {alert("This position is already SET");
             }
+         hide();
         }
     else
         {   

@@ -10,31 +10,50 @@
     
     
     
-    <body>
-        <input id="thing" value=' '/ type="hidden">
-        <input id="switcher" value=' '/ type="hidden">
+    <body onload="javascript:hide()">
+        <input id="thing" value=' ' type="hidden"/>
         <p id="where">MAIN TICTACTOE</p>
         <table>
             <tr>
-                <td><button id="tt00" onclick="javascript:funky(0)">CLICK</button></td>
-                <td><button id="tt01" onclick="javascript:funky(1)">CLICK</button></td>
-                <td><button id="tt02" onclick="javascript:funky(2)">CLICK</button></td>
+                <td><button id="tt00" onclick="javascript:funky(0)" onmouseover="javascript:show(0)" onmouseout="javascript:hide()">CLICK</button></td>
+                <td><button id="tt01" onclick="javascript:funky(1)" onmouseover="javascript:show(1)" onmouseout="javascript:hide()">CLICK</button></td>
+                <td><button id="tt02" onclick="javascript:funky(2)" onmouseover="javascript:show(2)" onmouseout="javascript:hide()">CLICK</button></td>
             </tr>
             <tr>
-                <td><button id="tt10" onclick="javascript:funky(3)">CLICK</button></td>
-                <td><button id="tt11" onclick="javascript:funky(4)">CLICK</button></td>
-                <td><button id="tt12" onclick="javascript:funky(5)">CLICK</button></td>
+                <td><button id="tt10" onclick="javascript:funky(3)" onmouseover="javascript:show(3)" onmouseout="javascript:hide()">CLICK</button></td>
+                <td><button id="tt11" onclick="javascript:funky(4)" onmouseover="javascript:show(4)" onmouseout="javascript:hide()">CLICK</button></td>
+                <td><button id="tt12" onclick="javascript:funky(5)" onmouseover="javascript:show(5)" onmouseout="javascript:hide()">CLICK</button></td>
             </tr>
             <tr>
-                <td><button id="tt20" onclick="javascript:funky(6)">CLICK</button></td>
-                <td><button id="tt21" onclick="javascript:funky(7)">CLICK</button></td>
-                <td><button id="tt22" onclick="javascript:funky(8)">CLICK</button></td>
+                <td><button id="tt20" onclick="javascript:funky(6)" onmouseover="javascript:show(6)" onmouseout="javascript:hide()">CLICK</button></td>
+                <td><button id="tt21" onclick="javascript:funky(7)" onmouseover="javascript:show(7)" onmouseout="javascript:hide()">CLICK</button></td>
+                <td><button id="tt22" onclick="javascript:funky(8)" onmouseover="javascript:show(8)" onmouseout="javascript:hide()">CLICK</button></td>
             </tr>
         </table>
         
         
         <button onclick="javascript:reset()">MAIN</button>
+        <table type="hidden" id="mt" style="position:relative;top:-28%;left:60%">
+            
+            
+            <tr>
+                <td id="t0"></td>
+                <td id="t1"></td>
+                <td id="t2"></td>
+            </tr>
+            <tr>
+                <td id="t3"></td>
+                <td id="t4"></td>
+                <td id="t5"></td>
+            </tr>
+            <tr>
+                <td id="t6"></td>
+                <td id="t7"></td>
+                <td id="t8"></td>
+            </tr>
         
+        
+        </table>
     
     
     </body>
