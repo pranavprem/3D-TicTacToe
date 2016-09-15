@@ -1,14 +1,16 @@
 var ttt = new Array(3);
 var i;
 var j;
-var temp=0;
+var temp = 0;
 
-for (i = 0; i < 9; ++i)
-    {ttt[i] = new Array(3);
+for (i = 0; i < 9; i++)
+    {
+        ttt[i] = new Array(3);
     }
 
 for (i=0; i <9; i++)
-    {for(j=0;j<3;++j)
+    {
+    for(j=0;j<3;++j)
         {ttt[i][j]=new Array(3)
         }
     }
@@ -48,14 +50,23 @@ function reset()
     {document.getElementById("thing").value=' ';
      document.getElementById("where").innerHTML='MAIN TICTACTOE';
      document.getElementById("tt00").innerHTML=big[0][0];
+     document.getElementById("tt00").title=ttt[0][0][0]+"  |  "+ttt[0][0][1]+"   |   "+ttt[0][0][2]+"\n----------\n"+ttt[0][1][0]+"  |  "+ttt[0][1][1]+"   |   "+ttt[0][1][2]+"\n----------\n"+ttt[0][2][0]+"  |  "+ttt[0][2][1]+"   |   "+ttt[0][2][2];
      document.getElementById("tt01").innerHTML=big[0][1];
+     document.getElementById("tt01").title=ttt[1][0][0]+"  |  "+ttt[1][0][1]+"   |   "+ttt[1][0][2]+"\n----------\n"+ttt[1][1][0]+"  |  "+ttt[1][1][1]+"   |   "+ttt[1][1][2]+"\n----------\n"+ttt[1][2][0]+"  |  "+ttt[1][2][1]+"   |   "+ttt[1][2][2];
      document.getElementById("tt02").innerHTML=big[0][2];
+     document.getElementById("tt02").title=ttt[2][0][0]+"  |  "+ttt[2][0][1]+"   |   "+ttt[2][0][2]+"\n----------\n"+ttt[2][1][0]+"  |  "+ttt[2][1][1]+"   |   "+ttt[2][1][2]+"\n----------\n"+ttt[2][2][0]+"  |  "+ttt[2][2][1]+"   |   "+ttt[2][2][2];
      document.getElementById("tt10").innerHTML=big[1][0];
+     document.getElementById("tt10").title=ttt[3][0][0]+"  |  "+ttt[3][0][1]+"   |   "+ttt[3][0][2]+"\n----------\n"+ttt[3][1][0]+"  |  "+ttt[3][1][1]+"   |   "+ttt[3][1][2]+"\n----------\n"+ttt[3][2][0]+"  |  "+ttt[3][2][1]+"   |   "+ttt[3][2][2];
      document.getElementById("tt11").innerHTML=big[1][1];
+     document.getElementById("tt11").title=ttt[4][0][0]+"  |  "+ttt[4][0][1]+"   |   "+ttt[4][0][2]+"\n----------\n"+ttt[4][1][0]+"  |  "+ttt[4][1][1]+"   |   "+ttt[4][1][2]+"\n----------\n"+ttt[4][2][0]+"  |  "+ttt[4][2][1]+"   |   "+ttt[4][2][2];
      document.getElementById("tt12").innerHTML=big[1][2];
+     document.getElementById("tt12").title=ttt[5][0][0]+"  |  "+ttt[5][0][1]+"   |   "+ttt[5][0][2]+"\n----------\n"+ttt[5][1][0]+"  |  "+ttt[5][1][1]+"   |   "+ttt[5][1][2]+"\n----------\n"+ttt[5][2][0]+"  |  "+ttt[5][2][1]+"   |   "+ttt[5][2][2];
      document.getElementById("tt20").innerHTML=big[2][0];
+     document.getElementById("tt20").title=ttt[6][0][0]+"  |  "+ttt[6][0][1]+"   |   "+ttt[6][0][2]+"\n----------\n"+ttt[6][1][0]+"  |  "+ttt[6][1][1]+"   |   "+ttt[6][1][2]+"\n----------\n"+ttt[6][2][0]+"  |  "+ttt[6][2][1]+"   |   "+ttt[6][2][2];
      document.getElementById("tt21").innerHTML=big[2][1];
+     document.getElementById("tt21").title=ttt[7][0][0]+"  |  "+ttt[7][0][1]+"   |   "+ttt[7][0][2]+"\n----------\n"+ttt[7][1][0]+"  |  "+ttt[7][1][1]+"   |   "+ttt[7][1][2]+"\n----------\n"+ttt[7][2][0]+"  |  "+ttt[7][2][1]+"   |   "+ttt[7][2][2];
      document.getElementById("tt22").innerHTML=big[2][2];
+     document.getElementById("tt22").title=ttt[8][0][0]+"  |  "+ttt[8][0][1]+"   |   "+ttt[8][0][2]+"\n----------\n"+ttt[8][1][0]+"  |  "+ttt[8][1][1]+"   |   "+ttt[8][1][2]+"\n----------\n"+ttt[8][2][0]+"  |  "+ttt[8][2][1]+"   |   "+ttt[8][2][2];
     }
 
 
