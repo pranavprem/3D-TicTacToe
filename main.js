@@ -1,23 +1,28 @@
-var ttt = new Array(3);
+var tictactoe = new Array(3);//serves as the 3d array for the tictactoe
+//Declare a bunch of variables to iterate
 var i;
 var j;
-var temp = 0;
 
+var temp = 0;//just a temp variable
+
+
+//initialize 3d tictactoe
 for (i = 0; i < 9; i++)
     {
-        ttt[i] = new Array(3);
+        tictactoe[i] = new Array(3);
     }
 
 for (i=0; i <9; i++)
     {
     for(j=0;j<3;++j)
-        {ttt[i][j]=new Array(3)
+        {tictactoe[i][j]=new Array(3)
         }
     }
 
 
-var big = new Array(3);
+var big = new Array(3);//serves as the larger tictactoe with tictactoes on the inside that you need to win.
 
+//initialize big tictactoe
 for (i = 0; i < 3; ++i)
     {big[i] = new Array(3);
     }
@@ -32,10 +37,11 @@ for(i=0;i<3;++i)
         }
     }
 
+//initialize the smaller tictactoes within the big one
 for(k=0;k<9;++k)
     {for(i=0;i<3;++i)
         {for(j=0;j<3;++j)
-            {ttt[k][i][j]=' ';
+            {tictactoe[k][i][j]=' ';
             }
         }
     }
@@ -45,34 +51,34 @@ for(k=0;k<9;++k)
 
 
 
-
+//resets to display the outer tictactoe
 function reset()
     {document.getElementById("thing").value=' ';
      document.getElementById("where").innerHTML='MAIN TICTACTOE';
      document.getElementById("tt00").innerHTML=big[0][0];
-     document.getElementById("tt00").title=ttt[0][0][0]+"  |  "+ttt[0][0][1]+"   |   "+ttt[0][0][2]+"\n----------\n"+ttt[0][1][0]+"  |  "+ttt[0][1][1]+"   |   "+ttt[0][1][2]+"\n----------\n"+ttt[0][2][0]+"  |  "+ttt[0][2][1]+"   |   "+ttt[0][2][2];
+     document.getElementById("tt00").title=tictactoe[0][0][0]+"  |  "+tictactoe[0][0][1]+"   |   "+tictactoe[0][0][2]+"\n----------\n"+tictactoe[0][1][0]+"  |  "+tictactoe[0][1][1]+"   |   "+tictactoe[0][1][2]+"\n----------\n"+tictactoe[0][2][0]+"  |  "+tictactoe[0][2][1]+"   |   "+tictactoe[0][2][2];
      document.getElementById("tt01").innerHTML=big[0][1];
-     document.getElementById("tt01").title=ttt[1][0][0]+"  |  "+ttt[1][0][1]+"   |   "+ttt[1][0][2]+"\n----------\n"+ttt[1][1][0]+"  |  "+ttt[1][1][1]+"   |   "+ttt[1][1][2]+"\n----------\n"+ttt[1][2][0]+"  |  "+ttt[1][2][1]+"   |   "+ttt[1][2][2];
+     document.getElementById("tt01").title=tictactoe[1][0][0]+"  |  "+tictactoe[1][0][1]+"   |   "+tictactoe[1][0][2]+"\n----------\n"+tictactoe[1][1][0]+"  |  "+tictactoe[1][1][1]+"   |   "+tictactoe[1][1][2]+"\n----------\n"+tictactoe[1][2][0]+"  |  "+tictactoe[1][2][1]+"   |   "+tictactoe[1][2][2];
      document.getElementById("tt02").innerHTML=big[0][2];
-     document.getElementById("tt02").title=ttt[2][0][0]+"  |  "+ttt[2][0][1]+"   |   "+ttt[2][0][2]+"\n----------\n"+ttt[2][1][0]+"  |  "+ttt[2][1][1]+"   |   "+ttt[2][1][2]+"\n----------\n"+ttt[2][2][0]+"  |  "+ttt[2][2][1]+"   |   "+ttt[2][2][2];
+     document.getElementById("tt02").title=tictactoe[2][0][0]+"  |  "+tictactoe[2][0][1]+"   |   "+tictactoe[2][0][2]+"\n----------\n"+tictactoe[2][1][0]+"  |  "+tictactoe[2][1][1]+"   |   "+tictactoe[2][1][2]+"\n----------\n"+tictactoe[2][2][0]+"  |  "+tictactoe[2][2][1]+"   |   "+tictactoe[2][2][2];
      document.getElementById("tt10").innerHTML=big[1][0];
-     document.getElementById("tt10").title=ttt[3][0][0]+"  |  "+ttt[3][0][1]+"   |   "+ttt[3][0][2]+"\n----------\n"+ttt[3][1][0]+"  |  "+ttt[3][1][1]+"   |   "+ttt[3][1][2]+"\n----------\n"+ttt[3][2][0]+"  |  "+ttt[3][2][1]+"   |   "+ttt[3][2][2];
+     document.getElementById("tt10").title=tictactoe[3][0][0]+"  |  "+tictactoe[3][0][1]+"   |   "+tictactoe[3][0][2]+"\n----------\n"+tictactoe[3][1][0]+"  |  "+tictactoe[3][1][1]+"   |   "+tictactoe[3][1][2]+"\n----------\n"+tictactoe[3][2][0]+"  |  "+tictactoe[3][2][1]+"   |   "+tictactoe[3][2][2];
      document.getElementById("tt11").innerHTML=big[1][1];
-     document.getElementById("tt11").title=ttt[4][0][0]+"  |  "+ttt[4][0][1]+"   |   "+ttt[4][0][2]+"\n----------\n"+ttt[4][1][0]+"  |  "+ttt[4][1][1]+"   |   "+ttt[4][1][2]+"\n----------\n"+ttt[4][2][0]+"  |  "+ttt[4][2][1]+"   |   "+ttt[4][2][2];
+     document.getElementById("tt11").title=tictactoe[4][0][0]+"  |  "+tictactoe[4][0][1]+"   |   "+tictactoe[4][0][2]+"\n----------\n"+tictactoe[4][1][0]+"  |  "+tictactoe[4][1][1]+"   |   "+tictactoe[4][1][2]+"\n----------\n"+tictactoe[4][2][0]+"  |  "+tictactoe[4][2][1]+"   |   "+tictactoe[4][2][2];
      document.getElementById("tt12").innerHTML=big[1][2];
-     document.getElementById("tt12").title=ttt[5][0][0]+"  |  "+ttt[5][0][1]+"   |   "+ttt[5][0][2]+"\n----------\n"+ttt[5][1][0]+"  |  "+ttt[5][1][1]+"   |   "+ttt[5][1][2]+"\n----------\n"+ttt[5][2][0]+"  |  "+ttt[5][2][1]+"   |   "+ttt[5][2][2];
+     document.getElementById("tt12").title=tictactoe[5][0][0]+"  |  "+tictactoe[5][0][1]+"   |   "+tictactoe[5][0][2]+"\n----------\n"+tictactoe[5][1][0]+"  |  "+tictactoe[5][1][1]+"   |   "+tictactoe[5][1][2]+"\n----------\n"+tictactoe[5][2][0]+"  |  "+tictactoe[5][2][1]+"   |   "+tictactoe[5][2][2];
      document.getElementById("tt20").innerHTML=big[2][0];
-     document.getElementById("tt20").title=ttt[6][0][0]+"  |  "+ttt[6][0][1]+"   |   "+ttt[6][0][2]+"\n----------\n"+ttt[6][1][0]+"  |  "+ttt[6][1][1]+"   |   "+ttt[6][1][2]+"\n----------\n"+ttt[6][2][0]+"  |  "+ttt[6][2][1]+"   |   "+ttt[6][2][2];
+     document.getElementById("tt20").title=tictactoe[6][0][0]+"  |  "+tictactoe[6][0][1]+"   |   "+tictactoe[6][0][2]+"\n----------\n"+tictactoe[6][1][0]+"  |  "+tictactoe[6][1][1]+"   |   "+tictactoe[6][1][2]+"\n----------\n"+tictactoe[6][2][0]+"  |  "+tictactoe[6][2][1]+"   |   "+tictactoe[6][2][2];
      document.getElementById("tt21").innerHTML=big[2][1];
-     document.getElementById("tt21").title=ttt[7][0][0]+"  |  "+ttt[7][0][1]+"   |   "+ttt[7][0][2]+"\n----------\n"+ttt[7][1][0]+"  |  "+ttt[7][1][1]+"   |   "+ttt[7][1][2]+"\n----------\n"+ttt[7][2][0]+"  |  "+ttt[7][2][1]+"   |   "+ttt[7][2][2];
+     document.getElementById("tt21").title=tictactoe[7][0][0]+"  |  "+tictactoe[7][0][1]+"   |   "+tictactoe[7][0][2]+"\n----------\n"+tictactoe[7][1][0]+"  |  "+tictactoe[7][1][1]+"   |   "+tictactoe[7][1][2]+"\n----------\n"+tictactoe[7][2][0]+"  |  "+tictactoe[7][2][1]+"   |   "+tictactoe[7][2][2];
      document.getElementById("tt22").innerHTML=big[2][2];
-     document.getElementById("tt22").title=ttt[8][0][0]+"  |  "+ttt[8][0][1]+"   |   "+ttt[8][0][2]+"\n----------\n"+ttt[8][1][0]+"  |  "+ttt[8][1][1]+"   |   "+ttt[8][1][2]+"\n----------\n"+ttt[8][2][0]+"  |  "+ttt[8][2][1]+"   |   "+ttt[8][2][2];
+     document.getElementById("tt22").title=tictactoe[8][0][0]+"  |  "+tictactoe[8][0][1]+"   |   "+tictactoe[8][0][2]+"\n----------\n"+tictactoe[8][1][0]+"  |  "+tictactoe[8][1][1]+"   |   "+tictactoe[8][1][2]+"\n----------\n"+tictactoe[8][2][0]+"  |  "+tictactoe[8][2][1]+"   |   "+tictactoe[8][2][2];
     }
 
 
 
 
-            
+//checks for win on the big outer tictactoe            
 function bigwin()
     {
     var a;
@@ -144,7 +150,7 @@ function bigwin()
 
 
 
-
+//check for win in smaller tictactoe
 function win(x)
     {
     
@@ -168,7 +174,7 @@ function win(x)
     //check for draw
     for(i=0;i<3;++i)
         {for(j=0;j<3;++j)
-                    {if(ttt[t][i][j]==' ')
+                    {if(tictactoe[t][i][j]==' ')
                         {flag=1;
                         }
                     }
@@ -206,19 +212,19 @@ function win(x)
             {flag=0;
             //rows and columns check
             for(i=0;i<3;++i)
-                         {if (ttt[t][i][0]==ttt[t][i][1] && ttt[t][i][1]==ttt[t][i][2] && ttt[t][i][2]!=' ')
+                         {if (tictactoe[t][i][0]==tictactoe[t][i][1] && tictactoe[t][i][1]==tictactoe[t][i][2] && tictactoe[t][i][2]!=' ')
                             {flag=1;
                             }
-                          if (ttt[t][0][i]==ttt[t][1][i] && ttt[t][1][i]==ttt[t][2][i] && ttt[t][2][i]!=' ')
+                          if (tictactoe[t][0][i]==tictactoe[t][1][i] && tictactoe[t][1][i]==tictactoe[t][2][i] && tictactoe[t][2][i]!=' ')
                             {flag=1;
                             }
                          }
              //forward slanting diagonal check
-             if(ttt[t][0][0]==ttt[t][1][1] && ttt[t][1][1]==ttt[t][2][2] && ttt[t][2][2]!=' ')
+             if(tictactoe[t][0][0]==tictactoe[t][1][1] && tictactoe[t][1][1]==tictactoe[t][2][2] && tictactoe[t][2][2]!=' ')
                 {flag=1;
                 }
              //backward slanting diagonal check
-             if(ttt[t][0][2]==ttt[t][1][1] && ttt[t][1][1]==ttt[t][2][0] && ttt[t][2][0]!=' ')
+             if(tictactoe[t][0][2]==tictactoe[t][1][1] && tictactoe[t][1][1]==tictactoe[t][2][0] && tictactoe[t][2][0]!=' ')
                 {flag=1;
                 }
              
@@ -250,10 +256,10 @@ function win(x)
 
 
 
-
+//funky function does major work when you click. It sets the value in the inner tictactoe that you clicked, checks for a win in the inner tictactoe and then checks for a win in the outer one.
 function funky(x) {
     var t=document.getElementById("thing").value;
-    var a;
+    var a; //variable a stores whose turn it is. X/O
     if(temp%2==0)
         {a='X';}
     else
@@ -298,15 +304,15 @@ function funky(x) {
             {d="INNER TICTACTOE";
              p=d.concat(t);
              document.getElementById("where").innerHTML=p;
-             document.getElementById("tt00").innerHTML=ttt[x][0][0];
-             document.getElementById("tt01").innerHTML=ttt[x][0][1];
-             document.getElementById("tt02").innerHTML=ttt[x][0][2];
-             document.getElementById("tt10").innerHTML=ttt[x][1][0];
-             document.getElementById("tt11").innerHTML=ttt[x][1][1];
-             document.getElementById("tt12").innerHTML=ttt[x][1][2];
-             document.getElementById("tt20").innerHTML=ttt[x][2][0];
-             document.getElementById("tt21").innerHTML=ttt[x][2][1];
-             document.getElementById("tt22").innerHTML=ttt[x][2][2];
+             document.getElementById("tt00").innerHTML=tictactoe[x][0][0];
+             document.getElementById("tt01").innerHTML=tictactoe[x][0][1];
+             document.getElementById("tt02").innerHTML=tictactoe[x][0][2];
+             document.getElementById("tt10").innerHTML=tictactoe[x][1][0];
+             document.getElementById("tt11").innerHTML=tictactoe[x][1][1];
+             document.getElementById("tt12").innerHTML=tictactoe[x][1][2];
+             document.getElementById("tt20").innerHTML=tictactoe[x][2][0];
+             document.getElementById("tt21").innerHTML=tictactoe[x][2][1];
+             document.getElementById("tt22").innerHTML=tictactoe[x][2][2];
             }
          else
             {alert("This position is already SET");
@@ -318,53 +324,53 @@ function funky(x) {
             t=parseInt(t);
             flag=0;
             switch(x){
-                        case 0: {if(ttt[t][0][0]!=' ')
+                        case 0: {if(tictactoe[t][0][0]!=' ')
                                     {flag=1;} 
                                  break;}
-                        case 1: {if(ttt[t][0][1]!=' ')
+                        case 1: {if(tictactoe[t][0][1]!=' ')
                                     {flag=1;} 
                                  break;}
-                        case 2: {if(ttt[t][0][2]!=' ')
+                        case 2: {if(tictactoe[t][0][2]!=' ')
                                     {flag=1;} 
                                  break;}
-                        case 3: {if(ttt[t][1][0]!=' ')
+                        case 3: {if(tictactoe[t][1][0]!=' ')
                                     {flag=1;} 
                                  break;}
-                        case 4: {if(ttt[t][1][1]!=' ')
+                        case 4: {if(tictactoe[t][1][1]!=' ')
                                     {flag=1;} 
                                  break;}
-                        case 5: {if(ttt[t][1][2]!=' ')
+                        case 5: {if(tictactoe[t][1][2]!=' ')
                                     {flag=1;} 
                                  break;}
-                        case 6: {if(ttt[t][2][0]!=' ')
+                        case 6: {if(tictactoe[t][2][0]!=' ')
                                     {flag=1;} 
                                  break;}
-                        case 7: {if(ttt[t][2][1]!=' ')
+                        case 7: {if(tictactoe[t][2][1]!=' ')
                                     {flag=1;} 
                                  break;}
-                        case 8: {if(ttt[t][2][2]!=' ')
+                        case 8: {if(tictactoe[t][2][2]!=' ')
                                     {flag=1;} 
                                  break;}
                         }
             if(flag==0)
                     {switch(x){
-                                case 0: {ttt[t][0][0]=a;
+                                case 0: {tictactoe[t][0][0]=a;
                                          break;}
-                                case 1: {ttt[t][0][1]=a;
+                                case 1: {tictactoe[t][0][1]=a;
                                          break;}
-                                case 2: {ttt[t][0][2]=a;
+                                case 2: {tictactoe[t][0][2]=a;
                                          break;}
-                                case 3: {ttt[t][1][0]=a;
+                                case 3: {tictactoe[t][1][0]=a;
                                          break;}
-                                case 4: {ttt[t][1][1]=a;
+                                case 4: {tictactoe[t][1][1]=a;
                                          break;}
-                                case 5: {ttt[t][1][2]=a;
+                                case 5: {tictactoe[t][1][2]=a;
                                          break;}
-                                case 6: {ttt[t][2][0]=a;
+                                case 6: {tictactoe[t][2][0]=a;
                                          break;}
-                                case 7: {ttt[t][2][1]=a;
+                                case 7: {tictactoe[t][2][1]=a;
                                          break;}
-                                case 8: {ttt[t][2][2]=a;
+                                case 8: {tictactoe[t][2][2]=a;
                                          break;}
                                 }
                    win(t);
