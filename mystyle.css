@@ -1,31 +1,177 @@
-@charset "utf-8";
-/* CSS Document */
-p
-    {position:relative;
-    left:42%;
-    top:20%;
-    }
-        
-table
-	{border-collapse:collapse;
-	 position:relative;
-	 left:38%;
-	 top:30%;
-	 
-	}
-	
-tr
-    {height:80px   
-    }
+:root {
+  color-scheme: light;
+  --ink: #1f1a17;
+  --muted: #57534e;
+  --paper: #f3eee4;
+  --card: #fffdf8;
+  --line: #1f1a17;
+  --x: #b42318;
+  --o: #1849a9;
+  --hover: #fff6e8;
+  --focus: #c2410c;
+}
 
+* {
+  box-sizing: border-box;
+}
 
-td
-    {width:80px;
-    border:thin solid black;
-	text-align:center
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+}
 
-button
-    {width:80px;
-    height:80px
-    }
+main {
+  width: min(44rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.5rem 0 3rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.lede {
+  margin: 0.5rem 0 0;
+  max-width: 38rem;
+  color: var(--muted);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#where {
+  margin: 1.75rem 0 0.25rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+#turn {
+  margin: 0 0 1rem;
+  min-height: 1.25rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 1rem;
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+table {
+  border-collapse: collapse;
+  background: var(--card);
+}
+
+td {
+  width: 6.5rem;
+  height: 6.5rem;
+  border: 2px solid var(--line);
+  padding: 0;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+#board button {
+  width: 6.5rem;
+  height: 6.5rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+#board button:hover {
+  background: var(--hover);
+}
+
+#board button:focus-visible,
+#back:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: -5px;
+}
+
+.mark-x {
+  color: var(--x);
+}
+
+.mark-o {
+  color: var(--o);
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+pre {
+  margin: 0;
+  min-width: 8.5rem;
+  padding: 0.85rem 1rem;
+  border: 2px solid var(--line);
+  background: var(--card);
+  font-family:
+    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  white-space: pre;
+}
+
+#back {
+  margin-top: 1.25rem;
+  padding: 0.45rem 0.9rem;
+  border: 2px solid var(--line);
+  background: var(--card);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+#back:hover {
+  background: var(--hover);
+}
+
+#back:focus-visible {
+  outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+  main {
+    padding-top: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  td,
+  #board button {
+    width: 26vw;
+    height: 26vw;
+    font-size: 1.6rem;
+  }
+}
