@@ -4,6 +4,12 @@ A nested tic-tac-toe game in the browser. The master board is a 3×3 of smaller 
 
 Pranav Prem wrote it as a proof of concept that would be easy to learn and would last a lecture at Goa College of Engineering. The name says three-dimensional. What you play is two levels of ordinary tic-tac-toe, not a 3×3×3 cube.
 
+<img alt="The master board after X wins the top-left small board. Hovering that square shows the three X's across its middle row." src="docs/master-board.png" width="720">
+
+<img alt="Inside a small board. O is in the corner, X is in the center, and it is X's turn." src="docs/inner-board.png" width="720">
+
+![X opens a small board, places marks, and claims the master square](docs/play.gif)
+
 ## How to play
 
 1. The screen starts on the master board. **X** moves first.
@@ -51,16 +57,18 @@ GitHub Actions runs the same checks on Node 22. There is no build step.
 ## Project structure
 
 ```
-main.html              page
-main.js                DOM: render the board, forward clicks
-mystyle.css            layout and X/O colors
-game.js                rules (browser global and CommonJS)
-scripts/serve.js       static file server
-test/game.test.js      rule tests
+main.html                 page
+main.js                   DOM: render the board, forward clicks
+mystyle.css               layout and X/O colors
+game.js                   rules (browser global and CommonJS)
+favicon.svg               tab icon
+scripts/serve.js          static file server
+test/game.test.js         rule tests
+docs/                     README screenshots
 .github/workflows/ci.yml
-AGENTS.md              guide for coding agents
-CLAUDE.md              pointer to AGENTS.md
-try.html, try.js       original scratch files, not part of the game
+AGENTS.md                 guide for coding agents
+CLAUDE.md                 pointer to AGENTS.md
+try.html, try.js          original scratch files, not part of the game
 ```
 
 ## License
