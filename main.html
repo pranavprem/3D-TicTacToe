@@ -1,43 +1,56 @@
-<html>
-<head>
-<title>
-2d-tic-tac-toe
-</title>    
-</head>
-<link rel="stylesheet" type="text/css" href="mystyle.css" />
-    
-<script src="main.js"></script>    
-    
-    
-    
-    <body>
-        <!-- this value stores certain temporary variables. initially used to debug  -->
-        <input id="thing" value=' '/ type="hidden">
-        <input id="switcher" value=' '/ type="hidden"> 
-        <!-- The actual tictactoe  -->
-        <p id="where">MAIN TICTACTOE</p>
-        <table>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3D Tic-Tac-Toe</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="mystyle.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>3D Tic-Tac-Toe</h1>
+        <p class="lede">
+          Win a small board to claim its square on the master board. Three in a
+          row on the master board wins the game.
+        </p>
+      </header>
+
+      <p id="where">MAIN TICTACTOE</p>
+      <p id="turn"></p>
+
+      <div class="layout">
+        <table id="board">
+          <tbody>
             <tr>
-                <td><button id="tt00" onclick="javascript:funky(0)">CLICK</button></td>
-                <td><button id="tt01" onclick="javascript:funky(1)">CLICK</button></td>
-                <td><button id="tt02" onclick="javascript:funky(2)">CLICK</button></td>
+              <td><button type="button" id="tt00"></button></td>
+              <td><button type="button" id="tt01"></button></td>
+              <td><button type="button" id="tt02"></button></td>
             </tr>
             <tr>
-                <td><button id="tt10" onclick="javascript:funky(3)">CLICK</button></td>
-                <td><button id="tt11" onclick="javascript:funky(4)">CLICK</button></td>
-                <td><button id="tt12" onclick="javascript:funky(5)">CLICK</button></td>
+              <td><button type="button" id="tt10"></button></td>
+              <td><button type="button" id="tt11"></button></td>
+              <td><button type="button" id="tt12"></button></td>
             </tr>
             <tr>
-                <td><button id="tt20" onclick="javascript:funky(6)">CLICK</button></td>
-                <td><button id="tt21" onclick="javascript:funky(7)">CLICK</button></td>
-                <td><button id="tt22" onclick="javascript:funky(8)">CLICK</button></td>
+              <td><button type="button" id="tt20"></button></td>
+              <td><button type="button" id="tt21"></button></td>
+              <td><button type="button" id="tt22"></button></td>
             </tr>
+          </tbody>
         </table>
-        
-        
-        <button onclick="javascript:reset()">MAIN</button>
-        
-    
-    
-    </body>
+
+        <figure id="preview-wrap">
+          <figcaption>Inner board</figcaption>
+          <pre id="preview">Hover a cell</pre>
+        </figure>
+      </div>
+
+      <button type="button" id="back">MAIN</button>
+    </main>
+
+    <script src="game.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>

@@ -1,0 +1,8 @@
+---
+description: Constraints for working on this nested tic-tac-toe game
+alwaysApply: true
+---
+
+Read AGENTS.md before editing. It is the source of truth for rules, commands, and gotchas. CLAUDE.md only points at it.
+
+Keep the game a static page plus `game.js`. Do not add a framework or a bundler. Do not change win, draw, turn, or alert behavior unless the task says to. Leave `try.html` and `try.js` alone. Do not add a LICENSE file.
